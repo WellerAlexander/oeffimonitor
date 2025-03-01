@@ -152,7 +152,7 @@ function addDeparture(departure) {
     ':' + addZeroBefore(departureTime.getMinutes()) +
     '</b>&nbsp;';
 
-  var differenceString = '+';
+  var differenceString = 'in ~ ';
 
   if (difference > 3600) {
     differenceString += Math.floor(difference / 3600) + 'h';
@@ -166,8 +166,7 @@ function addDeparture(departure) {
 
   departureRow.innerHTML = '<tr><td class="time ' + walkStatus +
     '">' + timeString + differenceString + '</td>' +
-    '<td>' + line + '</td><td>' + departure.stop +
-    '</td><td>' + capitalizeFirstLetter(departure.towards) +
+    '<td>' + line +
     '</td>';
   document.querySelector('tbody').appendChild(departureRow);
 }
